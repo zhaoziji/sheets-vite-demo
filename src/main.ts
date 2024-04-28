@@ -4,7 +4,7 @@ import "@univerjs/ui/lib/index.css";
 import "@univerjs/sheets-ui/lib/index.css";
 import "@univerjs/sheets-formula/lib/index.css";
 
-import { Univer } from "@univerjs/core";
+import { Univer, UniverInstanceType } from "@univerjs/core";
 import { defaultTheme } from "@univerjs/design";
 import { UniverDocsPlugin } from "@univerjs/docs";
 import { UniverDocsUIPlugin } from "@univerjs/docs-ui";
@@ -38,4 +38,4 @@ univer.registerPlugin(UniverSheetsUIPlugin);
 univer.registerPlugin(UniverSheetsFormulaPlugin);
 
 // create univer sheet instance
-univer.createUniverSheet({});
+univer.createUnit(UniverInstanceType.UNIVER_SHEET, {});
