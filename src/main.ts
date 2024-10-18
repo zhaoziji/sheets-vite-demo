@@ -1,4 +1,6 @@
 import "./style.css";
+import "@univerjs/sheets-formula-ui/lib/index.css";
+
 
 import { LocaleType, Univer, UniverInstanceType } from "@univerjs/core";
 import { defaultTheme } from "@univerjs/design";
@@ -8,6 +10,7 @@ import { UniverFormulaEnginePlugin } from "@univerjs/engine-formula";
 import { UniverRenderEnginePlugin } from "@univerjs/engine-render";
 import { UniverSheetsPlugin } from "@univerjs/sheets";
 import { UniverSheetsFormulaPlugin } from "@univerjs/sheets-formula";
+import { UniverSheetsFormulaUIPlugin } from "@univerjs/sheets-formula-ui";
 import { UniverSheetsUIPlugin } from "@univerjs/sheets-ui";
 import { UniverUIPlugin } from "@univerjs/ui";
 import { UniverSheetsNumfmtPlugin } from "@univerjs/sheets-numfmt";
@@ -20,6 +23,10 @@ import { UniverSheetsNumfmtPlugin } from "@univerjs/sheets-numfmt";
  * 如果您在使用该插件的时候出现了问题，或者无法理解如何使用，请禁用 Univer Plugins，并手动导入语言包和样式
  */
 import { zhCN, enUS } from 'univer:locales'
+import SheetsFormulaZhCN from '@univerjs/sheets-formula-ui/locale/zh-CN';
+
+
+import { FORMULA_IF_DATA } from "./formula-if-data"; 
 
 const univer = new Univer({
   theme: defaultTheme,
@@ -46,101 +53,8 @@ univer.registerPlugin(UniverSheetsPlugin);
 univer.registerPlugin(UniverSheetsUIPlugin);
 univer.registerPlugin(UniverSheetsNumfmtPlugin);
 univer.registerPlugin(UniverSheetsFormulaPlugin);
+univer.registerPlugin(UniverSheetsFormulaUIPlugin);
+
 
 // create univer sheet instance
-univer.createUnit(UniverInstanceType.UNIVER_SHEET, {
-  "id": "gyI0JO",
-  "sheetOrder": [
-      "RSfWjJFv4opmE1JaiRj80"
-  ],
-  "name": "",
-  "appVersion": "0.1.11",
-  "locale": "zhCN",
-  "styles": {},
-  "sheets": {
-      "RSfWjJFv4opmE1JaiRj80": {
-          "id": "RSfWjJFv4opmE1JaiRj80",
-          "name": "测试",
-          "tabColor": "",
-          "hidden": 0,
-          "rowCount": 30,
-          "columnCount": 10,
-          "zoomRatio": 1,
-          "freeze": {
-              "startRow": -1,
-              "startColumn": -1,
-              "ySplit": 0,
-              "xSplit": 0
-          },
-          "scrollTop": 0,
-          "scrollLeft": 0,
-          "defaultColumnWidth": 73,
-          "defaultRowHeight": 23,
-          "mergeData": [],
-          "cellData": {},
-          "rowData": {},
-          "columnData": {
-              "0": {
-                  "w": 125,
-                  "hd": 0
-              },
-              "1": {
-                  "w": 125,
-                  "hd": 0
-              },
-              "2": {
-                  "w": 125,
-                  "hd": 0
-              },
-              "3": {
-                  "w": 125,
-                  "hd": 0
-              },
-              "4": {
-                  "w": 125,
-                  "hd": 0
-              },
-              "5": {
-                  "w": 125,
-                  "hd": 0
-              },
-              "6": {
-                  "w": 125,
-                  "hd": 0
-              },
-              "7": {
-                  "w": 125,
-                  "hd": 0
-              },
-              "8": {
-                  "w": 125,
-                  "hd": 0
-              },
-              "9": {
-                  "w": 125,
-                  "hd": 0
-              }
-          },
-          "showGridlines": 1,
-          "rowHeader": {
-              "width": 46,
-              "hidden": 0
-          },
-          "columnHeader": {
-              "height": 20,
-              "hidden": 0
-          },
-          "selections": [
-              "A1"
-          ],
-          "rightToLeft": 0
-      }
-  },
-  "resources": [
-      {
-          "name": "SHEET_DEFINED_NAME_PLUGIN",
-          "data": ""
-      }
-  ]
-}
-);
+univer.createUnit(UniverInstanceType.UNIVER_SHEET, FORMULA_IF_DATA);
